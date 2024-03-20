@@ -18,6 +18,10 @@ ul {
     padding: 0;
 }
 
+h4, i {
+    color: #076343;
+}
+
 a {
     display: inline-block;
     text-decoration: none;
@@ -40,7 +44,7 @@ html *::-webkit-scrollbar-track {
 
 
 .content {
-    margin-top: 66px;
+    margin-top: 86px;
 }
 
 .offcanvas-header {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,14 +10,16 @@
     <title>Title</title>
     <link rel="stylesheet" th:href="@{/assets/css/GlobalStyles.css}">
     <link rel="stylesheet" th:href="@{/assets/css/user/home.css}">
-    <link rel="stylesheet" th:href="@{/assets/fontawesome-free-6.5.1-web/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/lib/fontawesome-free-6.5.1-web/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/slick/slick.css}" >
+    <link rel="stylesheet" th:href="@{/assets/slick/slick-theme.css}" >
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #e3f2fd;">
     <div class="container-fluid">
-        <a class="navbar-brand" th:href="@{/}"><img th:src="@{/assets/img/logo-cbd.jpg}" alt="CBD" width="40" height="40"></a>
+        <a class="navbar-brand" th:href="@{/}"><img th:src="@{/assets/img/logo.png}" alt="CBD" width="60" height="60"></a>
         <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -54,13 +56,73 @@
     </div>
 </nav>
 <div layout:fragment="content" class="content"></div>
-<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<div class="row mx-0">
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white" style="background-color: #45526e">
+        <div class="container p-4 pb-0">
+            <section class="">
+                <div class="row">
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">
+                            Về chúng tôi
+                        </h6>
+                        <p>
+                            Học bơi Sài Gòn chuyên cung cấp các khóa bơi kèm riêng (1 kèm 1) đến nhà học viên, hoặc hồ bơi gần nhà. Các khóa bơi kèm riêng với chất lượng đảm bảo sẽ mang đến cho bạn sự yên tâm và thoải mái nhất cùng hồ bơi thuận tiện cho bạn và cả gia đình.
+                        </p>
+                        <p>
+                            Hotline tư vấn: 079 678 3225
+                        </p>
+                    </div>
+
+                    <hr class="w-100 clearfix d-md-none">
+
+                    <div class="col-md-4 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">
+                            CÁC KHÓA BƠI KÈM RIÊNG
+                        </h6>
+                        <p>
+                            Khóa bơi cho trẻ em
+                        </p>
+                    </div>
+
+                    <hr class="w-100 clearfix d-md-none">
+
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Liên hệ</h6>
+                        <p><i class="fa-brands fa-square-facebook" style="color: #fff"></i> <a href="https://www.facebook.com/dayboicaptocsaigon" style="color: #fff">dayboicaptocsaigon</a></p>
+                        <p><i class="fa-solid fa-envelope" style="color: #fff"></i> dayboicaptocsaigon@gmail.com</p>
+                        <p><i class="fa-solid fa-phone" style="color: #fff"></i> 079 678 3225</p>
+                    </div>
+                </div>
+            </section>
+            <hr class="my-3">
+            <section class="p-3 pt-0">
+                <div class="row d-flex align-items-center">
+                    <!-- Grid column -->
+                    <div class="col-md-7 col-lg-8 text-center text-md-start">
+                        <div class="p-3">
+                            © 2024 Copyright: leanhthuong2k3@gmail.com
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
+    <!-- Footer -->
+</div>
+<script type="text/javascript" th:src="@{/assets/slick/slick.min.js}"></script>
 <script>
     $(document).ready(function() {
         $('.nav-link').click(function() {
             $('.nav-link').removeClass('active');
             $(this).addClass('active');
+        });
+        $('.list-recommends').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            dots: true
         });
     });
 </script>

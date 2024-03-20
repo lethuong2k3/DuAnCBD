@@ -12,7 +12,7 @@
                         <a class="btn btn-outline-primary" href="#">Đăng ký ngay</a>
                     </div>
                 </div>
-                <div class="placeholder"></div>
+                <img class="img-fluid w-50" th:src="@{/assets/img/banner.jpg}" alt="banner" />
             </div>
         </div>
     </section>
@@ -119,7 +119,7 @@
         </div>
     </div>
 
-    <div class="row recommends featurette mt-5 mx-0" style="background-color: #244785">
+    <div class="row recommends mt-5 mx-0" style="background-color: #244785">
         <div class="col-md-6 d-flex align-items-center">
             <p class="border-4 border-start ps-3 text-white" style="text-align: justify">Hồ bơi phù hợp cho cả các bé và người lớn. Các bạn hồ bơi hỗ trợ nhiệt tình. Những ngày đầu chưa kịp mua kính bơi được các bạn hỗ trợ kính để bảo vệ mắt. Highly recommend cho mấy bé bơi và học tập ở đây.
             <br />
@@ -133,11 +133,12 @@
     </div>
 
     <div class="container marketing mt-5">
-        <div class="row featurette mt-5">
+        <div class="row mt-5">
             <div class="col-md-6 order-md-2">
                 <div class="pricing-header mx-auto">
                     <h3 class="fw-bolder" style="color: #076343">Đặc điểm các lớp bơi kèm riêng</h3>
-                    <p class="fs-6 text-muted">Tại CBD, chất lượng lớp bơi là ưu tiên hàng đầu của chúng tôi</p>
+                    <p class="fs-6 text-muted">Tại Học Bơi Sài Gòn - Trung Tâm Dạy Bơi Kèm Riêng TP.HCM, <br />
+                        chất lượng lớp bơi là ưu tiên hàng đầu của chúng tôi</p>
                 </div>
                 <div class="list-widget">
                     <ul class="elementor-items">
@@ -149,7 +150,7 @@
                         <li class="elementor-item"><i class="icon-check fa-solid fa-circle-check"></i>Được đổi lịch học, đổi giáo viên nếu không hài lòng</li>
                     </ul>
                 </div>
-                <a href="tel:0796783225" class="btn btn-success" style="margin: 0 0 10px 25px">Tư vấn cho tôi</a>
+                <a href="tel:0796783225" class="btn btn-success" style="margin-bottom: 10px">Tư vấn cho tôi</a>
             </div>
             <div class="col-md-6 order-md-1">
                 <img th:src="@{/assets/img/hoc-boi-1.jpg}" alt="hoc-boi-1" class="img-fluid rounded-3" />
@@ -158,26 +159,459 @@
     </div>
 
     <div class="container marketing mt-5">
-        <div class="row featurette mt-5">
+        <div class="row mt-5">
             <div class="col-md-6 order-md-2">
-                <div class="pricing-header mx-auto">
-                    <h3 class="fw-bolder" style="color: #076343">Đặc điểm các lớp bơi kèm riêng</h3>
-                    <p class="fs-6 text-muted">Tại CBD, chất lượng lớp bơi là ưu tiên hàng đầu của chúng tôi</p>
+                <div class="pricing-header mx-auto" style="margin-bottom: 16px">
+                    <h4 class="fw-bolder" style="color: #076343; text-align: center">Liên hệ tư vấn ngay!</h4>
+                </div>
+                <form>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" class="form-control" placeholder="Tên anh chị" />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" class="form-control" placeholder="Số điện thoại" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-outline mb-3">
+                        <input type="text" class="form-control" placeholder="Địa chỉ" />
+                    </div>
+                    <div class="form-outline mb-3">
+                        <textarea class="form-control" rows="2" placeholder="Yêu cầu tư vấn"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-success w-25 mb-3">Gửi</button>
+                </form>
+            </div>
+            <div class="col-md-6 order-md-1">
+                <div class="pricing-header mx-auto" style="margin-bottom: 16px">
+                    <h4 class="fw-bolder" style="color: #076343; text-align: center">100% Guarantee!</h4>
                 </div>
                 <div class="list-widget">
                     <ul class="elementor-items">
-                        <li class="elementor-item"><i class="icon-check fa-solid fa-circle-check"></i>Học bơi cam kết chất lượng: Biết bơi 100% đảm bảo!</li>
-                        <li class="elementor-item"><i class="icon-check fa-solid fa-circle-check"></i>Giáo viên 1 kèm 1 xuống hồ cùng bạn!</li>
-                        <li class="elementor-item"><i class="icon-check fa-solid fa-circle-check"></i>Lịch học linh động: 2-3 buổi/tuần; 1h/buổi</li>
-                        <li class="elementor-item"><i class="icon-check fa-solid fa-circle-check"></i>Giáo viên có bằng cấp chuyên môn Bơi lội, Cứu hộ</li>
-                        <li class="elementor-item"><i class="icon-check fa-solid fa-circle-check"></i>Có cả HLV Nam và Nữ</li>
-                        <li class="elementor-item"><i class="icon-check fa-solid fa-circle-check"></i>Được đổi lịch học, đổi giáo viên nếu không hài lòng</li>
+                        <li class="elementor-item"><i class="icon-check fa-solid fa-circle-check"></i>Cam kết biết bơi 100% sau khóa học!</li>
+                        <li class="elementor-item"><i class="icon-check fa-solid fa-circle-check"></i>Giáo viên 1 kèm 1 xuống nước hướng dẫn bạn</li>
+                        <li class="elementor-item"><i class="icon-check fa-solid fa-circle-check"></i>Trung bình 8-12 buổi là bạn biết bơi!</li>
+                        <li class="elementor-item"><i class="icon-check fa-solid fa-circle-check"></i>Có cả HLV Nam và nữ</li>
+                        <li class="elementor-item"><i class="icon-check fa-solid fa-circle-check"></i>Được yêu cầu đổi lịch học, hồ bơi</li>
+                        <li class="elementor-item"><i class="icon-check fa-solid fa-circle-check"></i>Được đổi giáo viên hoặc Hoàn tiền nếu không hài lòng!</li>
                     </ul>
                 </div>
-                <a href="tel:0796783225" class="btn btn-success" style="margin: 0 0 10px 25px">Tư vấn cho tôi</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container marketing mt-5">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-6 fw-bolder" style="color: #076343">Tại sao nên chọn chúng tôi?</h1>
+            <p class="fs-6 text-muted">Hơn 10 năm hoạt động; hơn 1000 học viên biết bơi mỗi năm: <br />
+                Chúng tôi biết những gì học viên cần để biết bơi!</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <div class="service-item d-flex flex-column flex-sm-row rounded h-100 p-4 p-lg-5" style="background-color: #FFFADA">
+                    <div class="bg-icon flex-shrink-0 mb-3">
+                        <i class="fa-regular fa-circle-check fa-2x"></i>
+                    </div>
+                    <div class="ms-sm-4 text-sm-start">
+                        <h4 class="mb-3">Chất lượng được cam kết</h4>
+                        <span>Với các học viên trên 6 tuổi, dạn nước và hợp tác với HLV, chúng tôi cam kết biết bơi sau khóa học!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <div class="service-item d-flex flex-column flex-sm-row rounded h-100 p-4 p-lg-5" style="background-color: #FFFADA">
+                    <div class="bg-icon flex-shrink-0 mb-3">
+                        <i class="fa-regular fa-calendar-check fa-2x"></i>
+                    </div>
+                    <div class="ms-sm-4 text-sm-start">
+                        <h4 class="mb-3">Thời gian linh động</h4>
+                        <span>Bạn có thể tùy chọn lịch dạy bơi theo yêu cầu, và có thể báo nghỉ nếu bận. Chúng tôi có thể linh động lịch học theo từng học viên.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <div class="service-item d-flex flex-column flex-sm-row rounded h-100 p-4 p-lg-5" style="background-color: #FFFADA">
+                    <div class="bg-icon flex-shrink-0 mb-3">
+                        <i class="fa-solid fa-medal fa-2x"></i>
+                    </div>
+                    <div class="ms-sm-4 text-sm-start">
+                        <h4 class="mb-3">Huấn luyện viên kèm riêng</h4>
+                        <span>Chúng tôi chỉ hướng dẫn học viên đăng ký và trực tiếp hướng dẫn từng động tác. Chúng tôi dạy bơi kèm riêng để đảm bảo chất lượng.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <div class="service-item d-flex flex-column flex-sm-row rounded h-100 p-4 p-lg-5" style="background-color: #FFFADA">
+                    <div class="bg-icon flex-shrink-0 mb-3">
+                        <i class="fa-regular fa-face-smile-beam fa-2x"></i>
+                    </div>
+                    <div class="ms-sm-4 text-sm-start">
+                        <h4 class="mb-3">Có cả HLV Nam và Nữ</h4>
+                        <span>Giáo viên dạy bơi đều có bằng cấp chuyên môn và kinh nghiệm nhiều năm. Có giáo viên riêng dạy bơi cho học viên nữ.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <div class="service-item d-flex flex-column flex-sm-row rounded h-100 p-4 p-lg-5" style="background-color: #FFFADA">
+                    <div class="bg-icon flex-shrink-0 mb-3">
+                        <i class="fa-solid fa-house-user fa-2x"></i>
+                    </div>
+                    <div class="ms-sm-4 text-sm-start">
+                        <h4 class="mb-3">HLV đi đến hồ bơi của bạn</h4>
+                        <span>Hoặc hồ bơi gần nhà bạn, trong khu dân cư của bạn. Hãy liên lạc chúng tôi để được tư vấn hồ bơi phù hợp!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <div class="service-item d-flex flex-column flex-sm-row rounded h-100 p-4 p-lg-5" style="background-color: #FFFADA">
+                    <div class="bg-icon flex-shrink-0 mb-3">
+                        <i class="fa-solid fa-person-swimming fa-2x"></i>
+                    </div>
+                    <div class="ms-sm-4 text-sm-start">
+                        <h4 class="mb-3">HLV có chuyên môn & kinh nghiệm</h4>
+                        <span>Giáo viên dạy bơi được chúng tôi kiểm tra và đánh giá thường xuyên, để đảm bảo mang đến chất lượng tốt nhất cho bạn!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container marketing mt-5">
+        <div class="row mt-5">
+            <div class="col-md-6 order-md-2">
+                <div class="pricing-header mx-auto">
+                    <h3 class="fw-bolder" style="color: #076343">Giáo viên của bạn là ai?</h3>
+                    <p class="fs-6 text-muted">Chất lượng khóa bơi được hiểu là sau khóa bơi, bạn đạt được mục đích: biết bơi. Chúng tôi hiểu điều đó và chăm chút phương pháp lẫn giáo viên hướng dẫn bạn!</p>
+                </div>
+                <div class="list-widget">
+                    <ul class="elementor-items">
+                        <li class="elementor-item"><i class="icon-check fa-regular fa-square-check"></i>Giáo viên có bằng Đại học chuyên TDTT/Bơi lội</li>
+                        <li class="elementor-item"><i class="icon-check fa-regular fa-square-check"></i>Có Nghiệp vụ sư phạm Thể dục thể thao</li>
+                        <li class="elementor-item"><i class="icon-check fa-regular fa-square-check"></i>Có chứng chỉ cứu hộ, cứu đuối</li>
+                        <li class="elementor-item"><i class="icon-check fa-regular fa-square-check"></i>Có kinh nghiệm dạy bơi kèm riêng</li>
+                        <li class="elementor-item"><i class="icon-check fa-regular fa-square-check"></i>Có cả HLV Nam và nữ</li>
+                        <li class="elementor-item"><i class="icon-check fa-regular fa-square-check"></i>Được đổi giáo viên hoặc Hoàn tiền nếu không hài lòng!</li>
+                    </ul>
+                </div>
             </div>
             <div class="col-md-6 order-md-1">
-                <img th:src="@{/assets/img/hoc-boi-1.jpg}" alt="hoc-boi-1" class="img-fluid rounded-3" />
+                <img th:src="@{/assets/img/hoc-boi-2.jpg}" alt="hoc-boi-1" class="img-fluid rounded-3" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row recommends mt-5 mx-0" style="background-color: #D4F8FF">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-6 fw-bolder" style="color: #076343">Khách hàng nói về chúng tôi</h1>
+            <p class="fs-6 text-muted">Trân trọng cảm ơn Quý khách hàng đồng hành và ủng hộ Học Bơi Sài Gòn suốt hơn 10 năm qua!</p>
+        </div>
+        <div class="list-recommends">
+            <div class="slide">
+                <div class="card-recommend card text-center">
+                    <div class="card-body">
+                        <p class="card-text fst-italic">Giáo viên tận tình, học phí hợp lý. rất hài lòng</p>
+                        <div class="text-muted">
+                            Maya Hoang
+                        </div>
+                        <div>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="card-recommend card text-center">
+                    <div class="card-body">
+                        <p class="card-text fst-italic">dịch vụ uy tín tốt nhân viên tv nhiệt tình chu đáo cảm ơn shop</p>
+                        <div class="text-muted">
+                            Anh Thu
+                        </div>
+                        <div>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="card-recommend card text-center">
+                    <div class="card-body">
+                        <p class="card-text fst-italic">Dịch vụ chất lượng, tư vấn nhiệt tình</p>
+                        <div class="text-muted">
+                            LePeau Peel Da
+                        </div>
+                        <div>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="card-recommend card text-center">
+                    <div class="card-body">
+                        <p class="card-text fst-italic">Trải nghiệm tuyệt vời, tư vấn nhiệt tình</p>
+                        <div class="text-muted">
+                            Trọng Hiếu Trần
+                        </div>
+                        <div>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="card-recommend card text-center">
+                    <div class="card-body">
+                        <p class="card-text fst-italic">Giáo viên tận tình, học phí hợp lý. rất hài lòng</p>
+                        <div class="text-muted">
+                            Lý Trọng Nhân
+                        </div>
+                        <div>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="card-recommend card text-center">
+                    <div class="card-body">
+                        <p class="card-text fst-italic">trải nghiệm tuyệt vời, nhiệt tình <i style="color: red">❤❤❤❤❤❤❤</i></p>
+                        <div class="text-muted">
+                            Lê Hoàng Bảo Linh
+                        </div>
+                        <div>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="card-recommend card text-center">
+                    <div class="card-body">
+                        <p class="card-text fst-italic">Chất lượng tốt. Chỉ dạy rất tận tình</p>
+                        <div class="text-muted">
+                            Bảo Trúc
+                        </div>
+                        <div>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="card-recommend card text-center">
+                    <div class="card-body">
+                        <p class="card-text fst-italic">huấn luận viên dạy nhiệt tình. rất hài lòng</p>
+                        <div class="text-muted">
+                            Tuyết Loan
+                        </div>
+                        <div>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="card-recommend card text-center">
+                    <div class="card-body">
+                        <p class="card-text fst-italic">Giáo viên nhiệt tình, thân thiện, em hài lòng lắm ạ</p>
+                        <div class="text-muted">
+                            Phương Trang
+                        </div>
+                        <div>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="card-recommend card text-center">
+                    <div class="card-body">
+                        <p class="card-text fst-italic">rất cám ơn trung tâm.  con mình đã rất thích thú khi học bơi ở đây.</p>
+                        <div class="text-muted">
+                            Đinh Xuân Thơi
+                        </div>
+                        <div>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                            <i class="icon-star fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row recommends mt-5 mx-0">
+        <div class="pricing-header pb-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-6 fw-bolder" style="color: #076343">Câu hỏi thường gặp</h1>
+        </div>
+        <div class="col-md-6">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Thế nào là dạy bơi Cam kết chất lượng?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="list-widget">
+                                <ul class="elementor-items">
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Trẻ từ 7t trở lên, dạn nước thích bơi, hoặc người lớn đều có thể học lớp bơi cam kết chất lượng.</li>
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> “Biết bơi” được hiểu là có thể bơi được một chiều dọc hồ bơi (khoảng 20m tuỳ hồ) mà không chạm chân, không cần người hay vật dụng hỗ trợ. Một người không biết bơi sẽ không thể làm được điều này, thậm chí là 5m.</li>
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Sau khi bơi được, hãy đi bơi thường xuyên mỗi tuần để nâng được thể lực, luyện được nhuần nhuyễn động tác và tốt cho sức khỏe của bạn!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Tôi nên chọn hồ bơi nào?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="list-widget">
+                                <ul class="elementor-items">
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Nếu bạn có hồ bơi riêng hoặc có nhà riêng (người thân, bạn bè) tại các khu căn hộ cao cấp…? Đó sẽ là những hồ bơi sạch và lý tưởng nhất để học bơi!</li>
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Hoặc bạn có thể chọn một trong các hồ được chúng tôi đề nghị, tùy điều kiện di chuyển và thời gian, sự lựa chọn của bạn. Danh sách các hồ bơi và những thông tin liên quan đến hồ, bạn có thể tham khảo <a href="#">tại đây.</a></li>
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Hoặc alo <a href="tel:0796783225">0796783225</a> để được chúng tôi tư vấn nhanh chóng hồ bơi phù hợp cho bạn.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Thời gian học là bao lâu?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="list-widget">
+                                <ul class="elementor-items">
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Học phí sẽ tính theo từng môn bơi.</li>
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Mỗi môn bơi, thời lượng học trung bình là từ 8 đến 10 buổi học để bạn có thể bơi được.</li>
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Thời lượng mỗi buổi học tùy theo gói bạn đăng ký.</li>
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Mỗi buổi học tiêu chuẩn là 45 phút tối thiểu/học viên. </li>
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Vui lòng xem thời lượng học trong gói bơi cụ thể bạn chọn. </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                            Tôi cần chuẩn bị gì khi đi học bơi?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="list-widget">
+                                <ul class="elementor-items">
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Bạn cần chuẩn bị đồ bơi cá nhân cho mình (quần áo đi bơi, kính bơi, nón bơi).</li>
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Bạn nên mang theo khăn tắm, áo quần và đồ lót khô để thay sau khi tắm; lược chải tóc và bông tăm nếu cần.</li>
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Dụng cụ dạy bơi sẽ được giáo viên chúng tôi chuẩn bị cho bạn.</li>
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Tuy nhiên nếu bạn thích, có thể tự mua lấy một bộ để có thể tự tập lâu dài (các loại phao tay, phao lưng, chân vịt…). Khi học hãy hỏi giáo viên để được tư vấn thêm.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="accordion accordion-flush" id="accordionFlushExample-2">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne-2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne-2" aria-expanded="false" aria-controls="flush-collapseOne-2">
+                            Giáo viên của tôi là ai?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne-2" class="accordion-collapse collapse" aria-labelledby="flush-headingOne-2" data-bs-parent="#accordionFlushExample-2">
+                        <div class="accordion-body">
+                            <div class="list-widget">
+                                <ul class="elementor-items">
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Tất cả các giáo viên của Trung tâm đều là những Vận động viên bơi lội, Huấn luyện viên ở các trung tâm TDTT, Giáo viên chuyên nghiệp bơi lội nên đều có bằng cấp chuyên sâu bơi lội và các kỹ năng, kinh nghiệm cần thiết cho việc huấn luyện bơi lội (tối thiểu 02 năm kinh nghiệm).</li>
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Bạn sẽ yên tâm khi được giáo viên chúng tôi kèm riêng!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo-2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo-2" aria-expanded="false" aria-controls="flush-collapseTwo-2">
+                            Tôi có thể chọn giáo viên nữ?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo-2" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo-2" data-bs-parent="#accordionFlushExample-2">
+                        <div class="accordion-body">Được. Tuy nhiên giáo viên nữ trong ngành thể thao không chiếm ưu thế số lượng bằng nam. Bạn hãy gọi điện cho Trung tâm để đặt lịch học sớm và book lịch với cô giáo nếu muốn.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree-2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree-2" aria-expanded="false" aria-controls="flush-collapseThree-2">
+                            Cách đăng ký khóa bơi kèm riêng
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree-2" class="accordion-collapse collapse" aria-labelledby="flush-headingThree-2" data-bs-parent="#accordionFlushExample-2">
+                        <div class="accordion-body">
+                            <div class="list-widget">
+                                <ul class="elementor-items">
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Anh chị vui lòng điền form đăng ký học bơi tại đây: </li>
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Sau khi điền form, chuyển khoản học phí tương ứng của gói bơi bạn chọn vào tài khoản có trong link trên.</li>
+                                    <li class="elementor-item"><i class="fa-solid fa-check"></i> Trong vòng 1-2 ngày sau khi chúng tôi nhận được Đăng ký và Chuyển khoản học phí: Giáo viên sẽ liên hệ anh chị để xác nhận lớp học và anh chị học bơi theo đúng lịch trình đăng ký.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

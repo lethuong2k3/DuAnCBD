@@ -39,15 +39,9 @@
     margin-bottom: 35px;
 }
 
-.hero .mid .placeholder {
-    width: 55%;
-    height: 600px;
-    background-image: url('../../img/banner.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+.hero .mid img {
     border-radius: 15px 0 0 0;
-    box-shadow: 0 0 5px #21212130;
+    box-shadow: 0 0 5px #244785;
 }
 
 /* MARKETING CONTENT
@@ -108,6 +102,19 @@ h3 > a:hover {
 .elementor-items .icon-check {
     color: #076343;
     margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-recommend {
+    height: 200px;
+    background-color: #D8E8B5;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-star {
+    color: #FFF864;
 }
 
 @media only screen and (max-width: 46.1875em) {
@@ -131,9 +138,8 @@ h3 > a:hover {
         font-size: 2.2em;
     }
 
-    .hero .mid .placeholder {
-        width: 70%;
-        height: 300px;
+    .hero .mid img {
+        width: 70% !important;
         border-radius: 15px;
         margin: 20px auto 0px;
 
