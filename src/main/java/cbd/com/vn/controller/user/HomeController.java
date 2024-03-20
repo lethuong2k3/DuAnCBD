@@ -14,6 +14,4 @@ public class HomeController {
         model.addAttribute("value", "hello");
         return "/user/layouts/home";
     }
-
-
 }
