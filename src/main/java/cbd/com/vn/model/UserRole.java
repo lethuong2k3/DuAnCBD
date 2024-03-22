@@ -1,26 +1,26 @@
 package cbd.com.vn.model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import jakarta.persistence.*;
-import java.util.UUID;
 
-@Setter
-@Getter
 @Entity
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class FeeDescription {
+public class UserRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String description;
 
     @ManyToOne
-    @JoinColumn(name = "feeId")
-    private Fee fee;
+    @JoinColumn(name = "userId")
+    private Users user;
 
-    private Integer status;
+    @ManyToOne
+    @JoinColumn(name = "roleId")
+    private Role role;
 }

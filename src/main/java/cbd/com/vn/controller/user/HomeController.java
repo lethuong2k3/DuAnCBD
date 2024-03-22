@@ -12,6 +12,6 @@ public class HomeController {
     @GetMapping()
     public String view(Model model) {
         model.addAttribute("value", "hello");
-        return "/user/layouts/home";
+        return "/users/layouts/home";
     }
 }

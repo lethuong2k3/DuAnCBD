@@ -1,26 +1,35 @@
 package cbd.com.vn.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import jakarta.persistence.*;
-import java.util.List;
-import java.util.UUID;
+import java.util.Set;
 
 @Entity
 @Setter
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Course {
     @Id
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String title;
     private String description;
+    private Integer status;
 
-//    @ManyToMany
-//    @JoinTable(name = "course_benefit",
-//            joinColumns = @JoinColumn(name = "course_id"),
-//            inverseJoinColumns = @JoinColumn(name = "benefit_id"))
-//    private List<Benefit> benefits;
+    @OneToMany(mappedBy = "course")
+    @JsonIgnore
+    private Set<CourseBenefit> courseBenefits;
 
+    @OneToMany(mappedBy = "course")
+    @JsonIgnore
+    private Set<CourseImage> courseImages;
+
+    @OneToMany(mappedBy = "course")
+    @JsonIgnore
+    private Set<CourseVideo> courseVideos;
 }

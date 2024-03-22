@@ -1,5 +1,6 @@
 package cbd.com.vn.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,10 +11,17 @@ import java.util.UUID;
 @Getter
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 public class Fee {
     @Id
-    private UUID id;
-    private Integer price;
-    private UUID courseId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    private Double price;
+
+    @ManyToOne
+    @JoinColumn(name = "courseId")
+    private Course course;
+
+    private Integer status;
 }

@@ -111,7 +111,7 @@
     <!-- Footer -->
 </div>
 <script type="text/javascript" th:src="@{/assets/slick/slick.min.js}"></script>
-<script>
+<script type="text/javascript">
     $(document).ready(function() {
         $('.nav-link').click(function() {
             $('.nav-link').removeClass('active');
@@ -122,7 +122,19 @@
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 5000,
-            dots: true
+            dots: true,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: false
+                    }
+                },
+            ]
         });
     });
 </script>

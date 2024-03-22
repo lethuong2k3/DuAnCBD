@@ -1,30 +1,29 @@
 package cbd.com.vn.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import jakarta.persistence.*;
 
 import java.util.Set;
 
-
 @Entity
-@Setter
 @Getter
-@NoArgsConstructor
+@Setter
 @AllArgsConstructor
-public class Benefit {
+@NoArgsConstructor
+public class Video {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
-    private String description;
+
+    private String url;
+
     private Integer status;
 
-    @OneToMany(mappedBy = "benefit")
+    @OneToMany(mappedBy = "video")
     @JsonIgnore
-    private Set<CourseBenefit> courseBenefits;
-
+    private Set<CourseVideo> courseVideos;
 }
