@@ -33,7 +33,7 @@ public class Users {
 
     private String phone;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     @JsonIgnore
     private Set<UserRole> userRoles;
 }

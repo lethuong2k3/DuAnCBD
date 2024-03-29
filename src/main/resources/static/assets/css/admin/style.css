@@ -210,6 +210,14 @@
     transform: rotate(-180deg);
 }
 
+.icon-pen {
+    color: #FFC107;
+}
+
+.icon-trash {
+    color: #F44336;
+}
+
 @media (max-width: 575.98px) {
     .content .navbar .navbar-nav .nav-link {
         margin-left: 15px;
