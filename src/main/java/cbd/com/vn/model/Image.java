@@ -20,6 +20,7 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String url;
+    @Column(columnDefinition = "INT DEFAULT 1")
     private Integer status;
 
     @OneToMany(mappedBy = "image")
