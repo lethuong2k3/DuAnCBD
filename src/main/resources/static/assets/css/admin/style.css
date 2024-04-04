@@ -5,6 +5,17 @@
     --dark: #191C24;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -84,6 +95,14 @@
     min-height: 100vh;
     background: #FFFFFF;
     transition: 0.5s;
+}
+
+.modal:nth-of-type(even) {
+    z-index: 1052 !important;
+}
+
+.modal-backdrop.show:nth-of-type(even) {
+    z-index: 1051 !important;
 }
 
 @media (min-width: 992px) {

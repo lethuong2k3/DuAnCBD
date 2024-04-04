@@ -17,7 +17,11 @@ public class Fee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String title;
+
     private Double price;
+
+    private String description;
 
     @ManyToOne
     @JoinColumn(name = "courseId")

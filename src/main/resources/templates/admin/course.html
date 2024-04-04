@@ -2,64 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{admin/fragments/head :: headFragment (pageTitle='Trang khóa học')}">
 </head>
-<body>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Thêm mới khóa học</h5>
-                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <nav>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <button class="nav-link active" id="nav-course-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-course" type="button" role="tab" aria-controls="nav-course"
-                                aria-selected="true">Khóa học</button>
-                        <button class="nav-link" id="nav-picture-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-picture" type="button" role="tab"
-                                aria-controls="nav-picture" aria-selected="false">Hình ảnh</button>
-                        <button class="nav-link" id="nav-video-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-video" type="button" role="tab"
-                                aria-controls="nav-video" aria-selected="false">Video</button>
-                    </div>
-                </nav>
-                <div class="tab-content pt-3" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-course" role="tabpanel" aria-labelledby="nav-course-tab">
-                        <div class="row m-0">
-                            <div class="col-sm-6">
-                                <form>
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="name-course"
-                                               placeholder="Tên khóa học">
-                                        <label for="name-course">Tên khóa học</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="description-course"
-                                               placeholder="Mô tả khóa học">
-                                        <label for="description-course">Mô tả khóa học</label>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-sm-6"></div>
-
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="nav-picture" role="tabpanel" aria-labelledby="nav-picture-tab">
-                        Sanctus vero sit kasd sea gubergren takimata consetetur elitr elitr, consetetur sadipscing takimata ipsum dolores. Accusam duo accusam et labore ea elitr ipsum tempor sit, dolore aliquyam ipsum sit amet sit. Et dolore ipsum labore invidunt rebum. Sed dolore gubergren sanctus vero diam lorem rebum elitr, erat diam dolor clita.
-                    </div>
-                    <div class="tab-pane fade" id="nav-video" role="tabpanel" aria-labelledby="nav-video-tab">
-                        Sit consetetur eirmod lorem ea magna sadipscing ipsum elitr invidunt, dolores lorem erat ipsum ut aliquyam eos lorem sed. Nonumy aliquyam ea justo eos dolores dolores duo dolores. Aliquyam dolor sea dolores sit takimata no erat vero. At lorem justo tempor lorem duo, stet kasd aliquyam ipsum voluptua labore at.
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Thêm</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-            </div>
-        </div>
-    </div>
-</div>
+<body ng-app="course" ng-controller="course-ctrl">
 <div class="container-xxl position-relative bg-white d-flex p-0">
     <div th:replace="~{admin/fragments/loading.html :: spinnerFragment}"></div>
     <div th:replace="~{admin/fragments/sidebar.html :: sidebarFragment}"></div>
@@ -72,7 +15,7 @@
                 </div>
                 <div class="col-sm-6 d-flex justify-content-end">
                     <button type="button" class="btn btn-danger m-2"><i class="fas fa-minus"></i> Xóa tất cả</button>
-                    <button type="button" class="btn btn-success m-2" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i> Thêm mới</button>
+                    <a class="btn btn-success m-2" data-toggle="modal" href="#courseModal"><i class="fas fa-plus"></i> Thêm mới</a>
                 </div>
             </div>
             <div class="bg-light rounded h-100 p-4">
@@ -116,7 +59,105 @@
     </div>
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 </div>
-
+<div class="modal" id="courseModal">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Thêm mới khóa học</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-course-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-course" type="button" role="tab" aria-controls="nav-course"
+                                aria-selected="true">Khóa học</button>
+                        <button class="nav-link" id="nav-picture-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-picture" type="button" role="tab"
+                                aria-controls="nav-picture" aria-selected="false">Hình ảnh</button>
+                        <button class="nav-link" id="nav-video-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-video" type="button" role="tab"
+                                aria-controls="nav-video" aria-selected="false">Video</button>
+                    </div>
+                </nav>
+                <form method="post" class="tab-content pt-3" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-course" role="tabpanel" aria-labelledby="nav-course-tab">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="name-course" placeholder="Tên khóa học">
+                            <label for="name-course">Tên khóa học</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="comment-course" style="height: 100px;"></textarea>
+                                    <label for="comment-course">Mô tả khóa học</label>
+                        </div>
+                        <fieldset>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Tiêu đề học phí</th>
+                                    <th scope="col">Đơn giá</th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1 kèm 1</td>
+                                    <td>120000</td>
+                                    <td><button type="button" class="btn-close" aria-label="Close"></button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </fieldset>
+                        <a data-toggle="modal" href="#feeModal" class="btn btn-outline-primary w-100"><i class="fas fa-plus"></i> Thêm học phí</a>
+                    </div>
+                    <div class="tab-pane fade" id="nav-picture" role="tabpanel" aria-labelledby="nav-picture-tab">
+                        Sanctus vero sit kasd sea gubergren takimata consetetur elitr elitr, consetetur sadipscing takimata ipsum dolores. Accusam duo accusam et labore ea elitr ipsum tempor sit, dolore aliquyam ipsum sit amet sit. Et dolore ipsum labore invidunt rebum. Sed dolore gubergren sanctus vero diam lorem rebum elitr, erat diam dolor clita.
+                    </div>
+                    <div class="tab-pane fade" id="nav-video" role="tabpanel" aria-labelledby="nav-video-tab">
+                        Sit consetetur eirmod lorem ea magna sadipscing ipsum elitr invidunt, dolores lorem erat ipsum ut aliquyam eos lorem sed. Nonumy aliquyam ea justo eos dolores dolores duo dolores. Aliquyam dolor sea dolores sit takimata no erat vero. At lorem justo tempor lorem duo, stet kasd aliquyam ipsum voluptua labore at.
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Thêm</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="feeModal" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Học phí</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div><div class="container"></div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-floating mb-3">
+                        <input ng-model="title" type="text" class="form-control" id="title-fee"
+                               placeholder="Tên khóa học">
+                        <label for="title-fee">Tiêu đề học phí</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea ng-model="description" class="form-control" id="comment-fee" style="height: 100px;"></textarea>
+                        <label for="comment-fee">Mô tả học phí</label>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control" placeholder="Tiền học phí"
+                               aria-label="Tiền học phí">
+                        <span class="input-group-text" id="basic-addon2">VNĐ</span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary">Thêm</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
 <th:block th:insert="~{admin/index.html :: scriptFragment}"></th:block>
+<script th:src="@{/admin/js/course.js}"></script>
 </body>
 </html>
