@@ -23,10 +23,6 @@ public class Course {
 
     @OneToMany(mappedBy = "course")
     @JsonIgnore
-    private Set<CourseBenefit> courseBenefits;
-
-    @OneToMany(mappedBy = "course")
-    @JsonIgnore
     private Set<CourseImage> courseImages;
 
     @OneToMany(mappedBy = "course")

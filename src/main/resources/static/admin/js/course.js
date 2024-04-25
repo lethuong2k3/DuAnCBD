@@ -1,22 +1,82 @@
+let images = [];
+let videos = [];
 let app_course = angular.module("course", []);
-
 app_course.controller("course-ctrl", function ($scope, $http){
+    let feeTitle = document.getElementById('feeTitle');
+    let feeDescription = document.getElementById('feeComment');
+    let feePrice = document.getElementById('feePrice');
+    let nameCourse = document.getElementById('courseName');
+    let courseComment = document.getElementById('courseComment');
     $scope.fees = [];
+    $scope.removeErrorFee = () => {
+        let inputFee = document.querySelectorAll('.input-row');
+        Array.from(inputFee).map(ele => ele.classList.remove('error'));
+        document.getElementById('formFee').reset();
+    }
+
     $scope.addFee = () => {
-        if (
-            $scope.fees.length >= 5
-        ) {
-            toastr["warning"]("Chỉ được thêm tối đa 5 học phí");
+        let isValid = checkFee();
+        if (isValid) {
+            let fee = {
+                title: feeTitle.value,
+                description: feeDescription.value,
+                price: feePrice.value
+            }
+            $scope.fees.push(fee);
+            $('#feeModal').modal('hide');
+            $('#courseModal').modal('show');
+            $scope.removeErrorFee();
+        }
+    }
+
+    $scope.addCourse = () => {
+        if ($scope.fees.length === 0) {
+            toastr["warning"]("Vui lòng thêm học phí trước khi thêm mới khóa học!");
             return;
         }
-        let fee = {
-            title: $scope.title,
-            description: $scope.description,
-            price: $scope.price
-        }
-        $scope.fees.push(fee);
-        $('#feeModal').modal('hide');
-        $('#courseModal').modal('show');
+        let isValid = checkCourse();
+        if (isValid) {
+            $http.post(`/admin/fee/add`).then(resp => {
 
+            })
+
+        }
+    }
+
+    $scope.removeFee = (fee) => {
+        let index = $scope.fees.indexOf(fee);
+        if (index !== -1) {
+            $scope.fees.splice(index, 1);
+        }
+    }
+
+    function checkFee() {
+        let isCheck = true;
+
+        if (feeTitle.value == '') {
+            setError(feeTitle, 'Tiêu đề học phí không được để trống');
+            isCheck = false;
+        }
+
+        if (feePrice.value == '') {
+            setError(feePrice, 'Giá học phí không được để trống');
+            isCheck = false;
+        } else if (!isNumber(feePrice.value)) {
+            setError(feePrice, 'Đơn giá phải là số')
+            isCheck = false;
+        } else if (feePrice.value <= 0) {
+            setError(feePrice, 'Đơn giá phải là số nguyên dương')
+            isCheck = false;
+        }
+        return isCheck;
+    }
+
+    function checkCourse() {
+        let isCheck = true;
+        if (nameCourse.value = '') {
+            setError(nameCourse, 'Tên khóa học không được để trống');
+            isCheck = false;
+        }
+        return isCheck;
     }
 })

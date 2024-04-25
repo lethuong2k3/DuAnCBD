@@ -16,6 +16,92 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
+
+/* ------- From Step 1 ------- */
+
+
+.input-row {
+    margin-bottom: 1.5rem;
+}
+.input-row input {
+    width: 100%;
+    border: 1px solid #ccc;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 1rem;
+    outline: none;
+    transition: all 0.3s ease-out;
+}
+.input-row input:focus {
+    border: 1px solid #00bfa6;
+    outline: none;
+}
+
+.input__note textarea {
+    width: 100%;
+    min-height: 200px;
+    border: 1px solid #ccc;
+    user-select: none;
+    resize: none;
+    padding: 1rem;
+}
+.input__note textarea:focus {
+    border: 1px solid #00bfa6;
+}
+.input-row {
+    position: relative;
+}
+.input-row:last-child {
+    margin-bottom: 0;
+}
+
+.input-row.error input, .input-row.error .input-group-text {
+    border-color: #e74c3c;
+}
+.input-row small {
+    color: #e74c3c;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    visibility: hidden;
+    font-size: 13px;
+}
+.input-row.error small {
+    visibility: visible;
+}
+
+
+
+.image_container {
+    height: 120px;
+    width: 200px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.image_container img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+
+.image_container span {
+    top: 8px;
+    right: 8px;
+    color: red;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 0px 5px;
+}
+
+.image_container span:hover {
+    background-color: #F3F6F9;
+    border-radius: 50%;
+}
+
 .back-to-top {
     position: fixed;
     display: none;

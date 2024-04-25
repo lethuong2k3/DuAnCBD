@@ -219,3 +219,117 @@ toastr.options = {
     "hideMethod": "fadeOut"
 }
 
+function setError(ele, message) {
+    let parentEle = ele.parentNode;
+    parentEle.classList.add('error');
+    parentEle.querySelector('small').innerText = message;
+}
+
+function isNumber (number) {
+    return !isNaN(number) && isFinite(number);
+}
+
+function image_select() {
+    let image = document.getElementById('image').files;
+    for (i = 0; i < image.length; i++) {
+        if (!isImage(image[i])) {
+            toastr["error"](image[i].name + " không đúng định dạng hình ảnh");
+            continue;
+        } else if (check_duplicate(image[i].name, images)) {
+            if (image[i].size > 10048576) {
+                toastr["warning"](image[i].name + " có kích thước lớn hơn 10MB");
+                continue;
+            }
+            images.push({
+                "name": image[i].name,
+                "url": URL.createObjectURL(image[i]),
+                "size": image[i].size,
+                "file": image[i]
+            })
+        } else {
+            toastr["error"](image[i].name + " đã có trong danh sách");
+        }
+        document.getElementById('image').value = "";
+        document.getElementById('container').innerHTML = image_show();
+    }
+}
+
+function video_select() {
+    let video = document.getElementById('video').files;
+    for (i = 0; i < video.length; i++) {
+        if (!isVideo(video[i])) {
+            toastr["error"](video[i].name + " không đúng định dạng video");
+            document.getElementById('image').value = '';
+            continue;
+        } else if (check_duplicate(video[i].name, videos)) {
+            if (video[i].size > 1000048576) {
+                toastr["warning"](video[i].name + " có kích thước lớn hơn 1GB");
+                continue;
+            }
+            videos.push({
+                "name": video[i].name,
+                "url": URL.createObjectURL(video[i]),
+                "size": video[i].size,
+                "file": video[i]
+            })
+        } else {
+            toastr["error"](video[i].name + " đã có trong danh sách");
+        }
+        document.getElementById('video').value = "";
+        document.getElementById('lst-video').innerHTML = video_show();
+    }
+}
+
+function image_show() {
+    let image = "";
+    images.forEach(i => {
+        image += `<div class="image_container d-flex justify-content-center position-relative">
+                       <img src="`+ i.url +`" alt="Image"> 
+                        <span class="position-absolute" onclick="delete_image(`+ images.indexOf(i) +`)">&times;</span>
+                  </div>`;
+    })
+    return image;
+}
+
+function video_show() {
+    let video = "";
+    videos.forEach(i => {
+        video += `<video controls="controls" src="`+ i.url +`" type="video/mp4" width="330px" height="200px" style="margin: 10px"></video>
+                  <button onclick="delete_video(`+ videos.indexOf(i) +`)" type="button" class="btn-close" aria-label="Close"></button>`;
+    })
+    return video;
+}
+
+function delete_image(e) {
+    images.splice(e, 1);
+    document.getElementById('container').innerHTML = image_show();
+}
+
+function delete_video(e) {
+    videos.splice(e, 1);
+    document.getElementById('lst-video').innerHTML = video_show();
+}
+
+function check_duplicate(name, lst) {
+    var status = true;
+    if (lst.length > 0) {
+        for (e = 0; e < lst.length; e++) {
+            if (lst[e].name == name) {
+                status = false;
+                break;
+            }
+        }
+    }
+    return status;
+}
+
+
+function isImage(file) {
+    return file.name.match(/\.(jpg|jpeg|png|gif|bmp)$/);
+}
+
+function isVideo(file) {
+    return file.name.match(/\.(m4v|avi|mpg|mp4)$/);
+}
+
+
