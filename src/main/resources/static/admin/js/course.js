@@ -83,8 +83,8 @@ app_course.controller("course-ctrl", function ($scope, $http){
 
     function checkCourse() {
         let isCheck = true;
-        if (nameCourse.value = '') {
-            setError(nameCourse, 'Tên khóa học không được để trống');
+        if (courseName.value == '') {
+            setError(courseName, 'Tên khóa học không được để trống');
             isCheck = false;
         }
         return isCheck;
