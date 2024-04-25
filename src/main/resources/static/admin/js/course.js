@@ -5,7 +5,7 @@ app_course.controller("course-ctrl", function ($scope, $http){
     let feeTitle = document.getElementById('feeTitle');
     let feeDescription = document.getElementById('feeComment');
     let feePrice = document.getElementById('feePrice');
-    let nameCourse = document.getElementById('courseName');
+    let courseName = document.getElementById('courseName');
     let courseComment = document.getElementById('courseComment');
     $scope.fees = [];
     $scope.removeErrorFee = () => {
@@ -36,10 +36,20 @@ app_course.controller("course-ctrl", function ($scope, $http){
         }
         let isValid = checkCourse();
         if (isValid) {
-            $http.post(`/admin/fee/add`).then(resp => {
-
+            let course = {
+                title: courseName.value,
+                description: courseComment.value,
+                fees:$scope.fees
+            }
+            $http.post(`/admin/course/add`,course).then(resp => {
+                if(resp.status === 200)
+                {
+                    toastr["success"](resp.data.message);
+                }
             })
-
+                .catch(error =>{
+                    toastr["error"](error);
+                })
         }
     }
 

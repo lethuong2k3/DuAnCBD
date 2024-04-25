@@ -28,4 +28,8 @@ public class Course {
     @OneToMany(mappedBy = "course")
     @JsonIgnore
     private Set<CourseVideo> courseVideos;
+
+    @OneToMany(mappedBy = "course")
+    @JsonIgnore
+    private Set<Fee> fees;
 }
