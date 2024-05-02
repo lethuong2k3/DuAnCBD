@@ -22,8 +22,12 @@ public class CourseController {
     @PostMapping("/add")
     public ResponseEntity<?> createCourse(@RequestBody JsonNode data){
 
-        return new ResponseEntity<>(courseService.createCourse(data), HttpStatus.CREATED);
-
+        try{
+            return new ResponseEntity<>(courseService.createCourse(data), HttpStatus.CREATED);
+        }
+        catch (Exception e){
+            return new ResponseEntity<>(e.getMessage(),HttpStatus.BAD_REQUEST);
+        }
 
     }
 
